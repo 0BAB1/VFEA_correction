@@ -6,7 +6,7 @@ w = logspace(-1,1,400);
 rad2deg = 180/pi;
 s = j*w;
 for cnt = 1:length(zeta)
-xfer(cnt,:)=  (1/m) ./ (s.^2+(2*zeta(cnt)*s)+wn^2); %TODO
+xfer(cnt,:)=  (1/m) ./ (s.^2+(2*zeta(cnt)*s)+wn^2); %NOTE : on utilise './' et non '/' => element wise opération instead of matrix operation
 mag(cnt,:) = abs(xfer(cnt,:));
 phs(cnt,:) = angle(xfer(cnt,:))*rad2deg;
 figure(1)
