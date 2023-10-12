@@ -47,16 +47,23 @@ syms s t X
 %ExF COS(wt) FORCE without initial conditions X0 without damping
 % SYSTEM PARAMETERS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 % mass m / damping constant b / spring constant k
-  m = 1;
-  b = 0.;
-  k = 4;
+
+%================================
+% FISA AHOU FISA AHOU FISA AHOU
+%================================
+
+%frères FISAs : c'est ici qu'on tripote les paramètres : 
+
+  m = 1; %mass
+  b = 0.5; %damping
+  k = 4; %raideur
   
 % initial conditions: displacement x(0) and velocity v(0)  
   x0 = 0;
   v0 = 0;
 
 % driving frequency
-  w = 2;
+  w = 3; % mettre "sqrt(k/m)" pour freq critique (ou juste 2)
   
 % amplitude
   A = 1;
@@ -68,7 +75,10 @@ syms s t X
 txt_Input = 'f = A*cos(w*t)'; 
 
 
-% =================================================================== 
+%================================
+% FISA AHOU FISA AHOU FISA AHOU
+%================================
+
 % LAPLACE TRANSFORMS AND SOLVING FOR OUTPUT SIGNAL X(s)  ---> x(t)
 % MASS: displacement, velocity and acceleration
 % L.T. of input signal  
